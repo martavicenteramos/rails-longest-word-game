@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Welcome to the letter game!</h1>
+  <h2>These are your letters:</h2>
+  <div class="sample">
+  <% @sample.each do |ele| %>
+    <div class=letter><p><strong><%=ele%></strong></p></div>
+  <% end %>
+  </div>
+  <h2>What's your best guess?</h2>
+  <form action="score">
+    <%= hidden_field_tag 'sample', @sample %>
+    <input type="text" name="word">
+    <button><strong>Submit</strong></button>
+  </form>
+</div>
